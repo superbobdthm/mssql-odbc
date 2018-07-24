@@ -1,9 +1,9 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN apt-get update && apt-get -y install python3-pip curl apt-transport-https
 
 RUN curl -s https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
-curl -s https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
+curl -s https://packages.microsoft.com/config/ubuntu/18.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
 apt-get update && ACCEPT_EULA=Y apt-get -y install msodbcsql17 && apt install -y unixodbc-dev
 
 RUN pip3 install sqlalchemy pyodbc
