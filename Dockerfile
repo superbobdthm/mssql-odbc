@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt-get update && apt-get -y install python3-pip curl apt-transport-https
+RUN apt-get update && apt-get -y install python3-pip curl apt-transport-https libssl1.0.0 libssl-dev
 
 RUN curl -s https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
 curl -s https://packages.microsoft.com/config/ubuntu/18.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
